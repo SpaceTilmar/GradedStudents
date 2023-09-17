@@ -32,10 +32,16 @@ public class Classroom {
          this.students = studentArrayList.toArray(new Student[studentArrayList.size()]);
         }
         public void removeStudent(String firstName, String lastName){
-        for(removeStudent : students.length){
+        ArrayList<Student> studentArrayList = new ArrayList<>(Arrays.asList(students));
+        for(Student student : studentArrayList){
+            if(student != null && student.getFirstName() != null && student.getLastName() != null && student.getFirstName().equals(firstName) && student.getLastName().equals(lastName)){
+                studentArrayList.remove(student);
+                break;
+            }
+        }
+        this.students = studentArrayList.toArray(new Student[0]);
+        }
 
-        }
-        }
     }
 
 
