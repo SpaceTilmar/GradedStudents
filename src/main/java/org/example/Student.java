@@ -8,10 +8,10 @@ public class Student {
 
     private ArrayList<Double> examScores;
 
-    public Student(String firstName, String lastName, ArrayList<Double> examScores) {
+    public Student(String firstName, String lastName, Double[] examScores) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.examScores = examScores;
+        this.examScores = new ArrayList<>(Arrays.asList(examScores));
     }
 
     public String getFirstName() {
