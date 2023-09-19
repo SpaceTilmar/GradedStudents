@@ -14,6 +14,12 @@ public class Student {
         this.examScores = new ArrayList<>(Arrays.asList(examScores));
     }
 
+    public Student(String firstName, String lastName, ArrayList<Double> examScores) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.examScores = examScores;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -29,9 +35,15 @@ public class Student {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
     public int getNumberOfExamsTaken() {
-        return examScores.size();
+        if (this.examScores != null) {
+            return this.examScores.size();
+        } else {
+            return 0;
+        }
     }
+
     public String getExamScores(){
         String exam = "Exam Scores: \n";
 
@@ -42,11 +54,11 @@ public class Student {
 
     }
 
-    public void addExamScore(double examScore){
-        examScores.add(examScore);
+    public void addExamScore(double examScore) {
+            examScores.add(examScore);
     }
-    public void setExamScores(int examNumber, double newScore){
-        examScores.set(examNumber, newScore);
+    public void setExamScores(int examNumber, double newScore) {
+            examScores.set(examNumber, newScore);
     }
     public Double getAverageExamScore(){
         double sum = 0.0;
